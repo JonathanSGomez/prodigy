@@ -4,8 +4,8 @@ This is the historical NEXUS source snapshot supplied for the PRODIGY manuscript
 
 ## Suggested review order
 
-1. **Scientific definitions:** compare `legacy_nexus/functions.py` and `legacy_nexus/metric.py` with the manuscript's definitions of nearest neighbours, Step 1/2 candidate membership, ground truth, meanPC, and the candidate-to-truth area criterion.
-2. **Calibration modes:** inspect the flags and control flow in `legacy_nexus/main.py`, especially `best_combination`, `best_step`, `run_step1`, `run_step2`, `save_candidate_ids`, and snapshot/mass dependence.
+1. **Scientific definitions:** compare `prodigy_source/functions.py` and `prodigy_source/metric.py` with the manuscript's definitions of nearest neighbours, Step 1/2 candidate membership, ground truth, meanPC, and the candidate-to-truth area criterion.
+2. **Calibration modes:** inspect the flags and control flow in `prodigy_source/main.py`, especially `best_combination`, `best_step`, `run_step1`, `run_step2`, `save_candidate_ids`, and snapshot/mass dependence.
 3. **Reproducibility:** identify the minimal permitted input catalogue and provenance files needed to reproduce at least one $z$, mass cut, region and projection; confirm units and corresponding published metrics.
 4. **Publication readiness:** decide which algorithms are intended as public functionality, which science-derived inputs can be redistributed, and who approves the license/copyright attribution.
 

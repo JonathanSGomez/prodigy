@@ -2,7 +2,7 @@
 
 Source: `nexus(2).zip` supplied by the authors. Inspected statically without running the simulation-dependent code. The files were parsed for Python syntax only.
 
-## Mode controls in `legacy_nexus/main.py`
+## Mode controls in `prodigy_source/main.py`
 
 - Lines 50–54: full search grid includes `ll1_values = range(100,8100,100)`, `nn_values=range(5,11)`, `alpha_values=np.arange(0.1,3.1,0.1)`, and `ll2p_values=range(1,101)`.
 - Lines 56–71: `best_combination=True`, `best_step=1`, `run_step1=False`, `run_step2=True`. `best_combination=False` leaves full grid in place; `True` calls `get_best_combination()` in `functions.py`, which reads external best-configuration CSV files. With `best_step=1` and Step 2 active, the code explicitly expands `ll2p_values` to 1–100.

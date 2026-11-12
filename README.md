@@ -14,13 +14,13 @@ The associated manuscript is *PRODIGY: Identifying the Progenitors of Present-da
 
 | Location | Purpose | Review status |
 | --- | --- | --- |
-| [`legacy_nexus/main.py`](legacy_nexus/main.py) | Historical Step 1/2 grid-search and metrics runner | Original source; needs mode separation |
-| [`legacy_nexus/functions.py`](legacy_nexus/functions.py) | Projected density estimates, connectivity, parameter lookup | Original source; neighbour convention to validate |
-| [`legacy_nexus/metric.py`](legacy_nexus/metric.py) | Simulation truth matching, purity/completeness, and areas | Original source; empty-set cases to validate |
-| [`legacy_nexus/data.py`](legacy_nexus/data.py) | AHF catalogue and progenitor-data paths | Requires private paths and data |
-| [`legacy_nexus/run.py`](legacy_nexus/run.py) | Historical batch launcher | Not portable; may delete logs |
-| [`legacy_nexus/extraction/`](legacy_nexus/extraction/) | Supporting truth and truth-area extraction | Simulation-specific; review before reuse |
-| [`legacy_nexus/initial_tracks/generate_centralhalosIDS.py`](legacy_nexus/initial_tracks/generate_centralhalosIDS.py) | Main-progenitor track preparation | Simulation-specific |
+| [`prodigy_source/main.py`](prodigy_source/main.py) | Historical Step 1/2 grid-search and metrics runner | Original source; needs mode separation |
+| [`prodigy_source/functions.py`](prodigy_source/functions.py) | Projected density estimates, connectivity, parameter lookup | Original source; neighbour convention to validate |
+| [`prodigy_source/metric.py`](prodigy_source/metric.py) | Simulation truth matching, purity/completeness, and areas | Original source; empty-set cases to validate |
+| [`prodigy_source/data.py`](prodigy_source/data.py) | AHF catalogue and progenitor-data paths | Requires private paths and data |
+| [`prodigy_source/run.py`](prodigy_source/run.py) | Historical batch launcher | Not portable; may delete logs |
+| [`prodigy_source/extraction/`](prodigy_source/extraction/) | Supporting truth and truth-area extraction | Simulation-specific; review before reuse |
+| [`prodigy_source/initial_tracks/generate_centralhalosIDS.py`](prodigy_source/initial_tracks/generate_centralhalosIDS.py) | Main-progenitor track preparation | Simulation-specific |
 | [`AUDIT.md`](AUDIT.md) | Technical issues identified during static inspection | Prioritised review required |
 | [`docs/REVIEW_GUIDE.md`](docs/REVIEW_GUIDE.md) | Coauthor review questions and process | Ready for comments |
 | [`docs/RELEASE_CHECKLIST.md`](docs/RELEASE_CHECKLIST.md) | Requirements before public release | Not yet complete |
@@ -43,13 +43,13 @@ The historical runner uses `best_combination = False` to leave the full Step 1 a
 
 ## Setup and reproducibility status
 
-The original scripts import Python, NumPy, Pandas, SciPy, Matplotlib and Shapely; see [`requirements.txt`](requirements.txt). Dependency versions, Python compatibility, scientific outputs, and execution on a clean computer remain **untested**. The scripts use internal absolute paths and simulation-derived ground truth. They **cannot currently be run from this repository alone**. Please review the source without launching `legacy_nexus/run.py` on a working machine; it contains log-directory cleanup code.
+The original scripts import Python, NumPy, Pandas, SciPy, Matplotlib and Shapely; see [`requirements.txt`](requirements.txt). Dependency versions, Python compatibility, scientific outputs, and execution on a clean computer remain **untested**. The scripts use internal absolute paths and simulation-derived ground truth. They **cannot currently be run from this repository alone**. Please review the source without launching `prodigy_source/run.py` on a working machine; it contains log-directory cleanup code.
 
 The intended public release will offer separately documented **detection**, **Step 1 calibration**, and **Step 2 calibration** modes, together with independently reproducible tests, a redistributable demonstration catalogue, and properly versioned configurations.
 
 ## For coauthors
 
-Please begin with **[the coauthor review guide](docs/REVIEW_GUIDE.md)** and **[the scientific audit](AUDIT.md)**. GitHub Issues can be used for feedback with file and line references. The historical files are preserved unmodified in `legacy_nexus/`; changes to the calibrated algorithm should be discussed and regression-tested before being merged into a new package.
+Please begin with **[the coauthor review guide](docs/REVIEW_GUIDE.md)** and **[the scientific audit](AUDIT.md)**. GitHub Issues can be used for feedback with file and line references. The historical files are preserved unmodified in `prodigy_source/`; changes to the calibrated algorithm should be discussed and regression-tested before being merged into a new package.
 
 ## Licensing and citation
 
