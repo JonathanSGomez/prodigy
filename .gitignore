@@ -218,3 +218,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# PRODIGY: private simulation products and calibration outputs
+**/metric/results/
+**/logfiles/
+**/logfiles_truth/
+**/initial_tracks/*.txt
+**/matches_sn*.dat*
+**/truth.sn*.txt.bz2
+**/truth_areas*.csv.bz2
+*.env
+.env.*
+config/local_*.yaml
+config/local_*.toml

@@ -1,0 +1,6 @@
+# Imports observed in legacy NEXUS scripts. Versions deliberately unpinned pending testing.
+numpy
+pandas
+scipy
+matplotlib
+shapely
